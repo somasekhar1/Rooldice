@@ -23,9 +23,7 @@ print(f"""                      back:{i[1][1]}
 ****************Let's Play******************                                       """)
 
 r.shuffle(i)
-x=i # x is Shuffled List.
-print('After shuffling: ',x)
-
+print(i)
 
 
 def dice():
@@ -33,9 +31,9 @@ def dice():
         while(True):
         
             if select=='r':
-                x[0][0],x[2][1],x[0][1],x[2][0]=i[2][0],i[0][0],i[2][1],i[0][1]
+                i[0][0],i[2][1],i[0][1],i[2][0]=i[2][0],i[0][0],i[2][1],i[0][1]
         
-            return print(f"""                      back:{i[1][1]}
+            return (f"""                      back:{i[1][1]}
                 +---------------------+
                /                     /|
               /        Top:{i[0][0]}        / |
@@ -56,8 +54,8 @@ def dice():
     
     
             if select=='l':
-                x[2][0],x[0][0],x[2][1],x[0][1]=i[0][0],i[2][1],i[0][1],i[2][0]
-                return print(f"""                      back:{i[1][1]}
+                i[2][0],i[0][0],i[2][1],i[0][1]=i[0][0],i[2][1],i[0][1],i[2][0]
+                return (f"""                      back:{i[1][1]}
                 +---------------------+
                /                     /|
               /        Top:{i[0][0]}        / |
@@ -76,8 +74,8 @@ def dice():
                                                                    """)
 
             if select=='u':
-                x[0][0],x[1][1],x[1][0],x[0][1]=i[1][0],i[0][0],i[0][1],i[1][1]
-                return print(f"""                      back:{i[1][1]}
+                i[0][0],i[1][1],i[1][0],i[0][1]=i[1][0],i[0][0],i[0][1],i[1][1]
+                return (f"""                      back:{i[1][1]}
                 +---------------------+
                /                     /|
               /        Top:{i[0][0]}        / |
@@ -96,8 +94,8 @@ def dice():
                                                                    """)
 
             if select=='d':
-                x[1][0],x[0][0],x[0][1],x[1][1]=i[0][0],i[1][1],i[1][0],i[0][1]
-                return print(f"""                      back:{i[1][1]}
+                i[1][0],i[0][0],i[0][1],i[1][1]=i[0][0],i[1][1],i[1][0],i[0][1]
+                return (f"""                      back:{i[1][1]}
                 +---------------------+
                /                     /|
               /        Top:{i[0][0]}        / |
@@ -121,28 +119,28 @@ def dice():
 
 def right():
         """ This function rotates dice to the Right side """
-        x[0][0],x[2][1],x[0][1],x[2][0]=i[2][0],i[0][0],i[2][1],i[0][1]   
-        return x
+        i[0][0],i[2][1],i[0][1],i[2][0]=i[2][0],i[0][0],i[2][1],i[0][1]
+        return i
 
 def left():
         """ This function rotates dice to the Left side """
-        x[2][0],x[0][0],x[2][1],x[0][1]=i[0][0],i[2][1],i[0][1],i[2][0]
-        return x
+        i[2][0],i[0][0],i[2][1],i[0][1]=i[0][0],i[2][1],i[0][1],i[2][0]
+        return i
 
 def up():
         """ This function rotates dice to the Up side """
-        x[0][0],x[1][1],x[1][0],x[0][1]=i[1][0],i[0][0],i[0][1],i[1][1]
-        return x
+        i[0][0],i[1][1],i[1][0],i[0][1]=i[1][0],i[0][0],i[0][1],i[1][1]
+        return i
 
 def down():
         """ This function rotates dice to the Down side """
-        x[1][0],x[0][0],x[0][1],x[1][1]=i[0][0],i[1][1],i[1][0],i[0][1]
-        return x
+        i[1][0],i[0][0],i[0][1],i[1][1]=i[0][0],i[1][1],i[1][0],i[0][1]
+        return i
 
 
 
 while True:
-  select = input('pick your move\nR/L/U/D/Q : ').lower()
+  select = (input('pick your move\nR-roll right/L-roll left/U-roll up/D-roll down/Q-quit : ').lower()).strip()
   if select == 'r':
     print(right())
   elif select == 'l':
@@ -155,7 +153,7 @@ while True:
     print("")
     print("**********Hey!!! This is Your Final Dice**********")
     print()
-    (dice())
+    print(dice())
     print("*******************Thank You*********************")
     break
   else:
