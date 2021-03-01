@@ -42,8 +42,3 @@ It contains 5 Funcions
 
 
 
-with regards,
-
-Team B
-
-Priti Gupta,Venkat Kakoju, Pavan Kumar, Rafi Shaik, Sravan Kumar, Adnan Ansari 
